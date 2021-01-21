@@ -1,0 +1,37 @@
+:root {
+
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f1f1f1;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
+
+#text {
+  position: relative;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12em;
+  line-height: 0.9em;
+  letter-spacing: 2px;
+  text-align: center;
+  transform: rotate(-28deg) skew(25deg);
+}
+
+#text {
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    color: rgba(0,0,0,0.3);
+    text-shadow: none;
+    filter: blur(12px);
+    z-index: -1;
+  }
+}
