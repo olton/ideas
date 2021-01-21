@@ -1,0 +1,99 @@
+:root {
+  --bg: url("bg.jpg");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #a41111;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+section h2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  line-height: 100vh;
+  font-size: 10vw;
+  color: #fff;
+  font-weight: 700;
+}
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.banner .blocks {
+  position: relative;
+  display: block;
+  width: 5vw;
+  height: 5vh;
+  animation: animateIn 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+@keyframes animateIn {
+  0% {
+    transform: translateZ(2000px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background: var(--bg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  99% {
+    transform: translateZ(1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background: var(--bg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  100% {
+    transform: translateZ(0px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    background: var(--bg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+section.active .banner .blocks {
+  animation: animateOut 2s ease-in-out forwards;
+  background: var(--bg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+}
+@keyframes animateOut {
+  0% {
+    transform: translateZ(0px);
+    background: var(--bg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    transform: translateZ(2000px);
+    background: var(--bg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 5px 15px #000000;
+  }
+}
+/*# sourceMappingURL=index.css.map */
